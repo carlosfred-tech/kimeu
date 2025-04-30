@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Something for You</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #ffe6f7; /* Light pink background */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #e91e63; /* Pink text color */
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .heart {
+            font-size: 3em;
+            color: #e91e63;
+            cursor: pointer;
+            animation: heartbeat 1.5s infinite alternate;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.2); }
+        }
+
+        #song {
+            margin-top: 20px;
+        }
+
+        #response {
+            margin-top: 20px;
+            font-style: italic;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Dearest Love</h1>
+        <p class="message">Just wanted to send a little something to remind you how special you are to me.</p>
+        <div class="heart" id="heart">❤</div>
+        <audio id="song" src="your_romantic_song.mp3" controls loop></audio>
+        <div id="response">Click the heart...</div>
+    </div>
+   
+    <script>
+        const heart = document.getElementById('heart');
+        const responseDiv = document.getElementById('response');
+        const song = document.getElementById('song');
+
+        heart.addEventListener('click', () => {
+            responseDiv.textContent = "My heart beats for you!";
+            // You can add more interactive elements or animations here
+        });
+
+        // Feel free to uncomment this to play the song automatically
+        // window.onload = () => {
+        //     song.play();
+        // };
+    </script>
+</body>
+</html>
